@@ -1,0 +1,269 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(90deg, rgb(54, 54, 106) 42%, rgb(89, 113, 200) 100%, rgb(1, 25, 26) 100%);
+}
+
+.container {
+  height: 100%;
+  position: relative;
+}
+.container .screen {
+  width: 70%;
+  border: solid 1px #fff;
+  background-color: #fff;
+  border-radius: 1em;
+  height: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.container .screen .windows {
+  background-color: #00A3EE;
+  border-radius: 1em;
+  position: relative;
+}
+.container .screen .windows::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 2px;
+  background-color: #fff;
+  left: 50%;
+}
+.container .screen .windows::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background-color: #fff;
+  top: 50%;
+}
+.container .screen div {
+  width: 10em;
+  aspect-ratio: 1;
+}
+.container .screen .cube {
+  perspective: 1000px;
+  width: 5em;
+  cursor: pointer;
+  perspective-origin: bottom;
+  position: relative;
+  transition: 0.3s;
+}
+.container .screen .cube .corp {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  transform-style: preserve-3d;
+  display: flex;
+  animation: rotate3d infinite ease-in-out 10s alternate;
+}
+.container .screen .cube .corp div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.container .screen .cube .corp .back {
+  background-color: #F4BFBF;
+  transform: translateZ(-80px) rotateY(180deg);
+}
+.container .screen .cube .corp .right {
+  background-color: #A8D1D1;
+  transform: rotateY(-270deg) translateX(80px);
+  transform-origin: top right;
+}
+.container .screen .cube .corp .left {
+  background-color: #D6E5FA;
+  transform: rotateY(270deg) translateX(-80px);
+  transform-origin: center left;
+}
+.container .screen .cube .corp .top {
+  background-color: #E5CFF7;
+  transform: rotateX(-90deg) translateY(0);
+  transform-origin: top center;
+}
+.container .screen .cube .corp .bottom {
+  background-color: #FCE2DB;
+  transform: rotateX(90deg) translateY(0px);
+  transform-origin: bottom center;
+}
+.container .screen .cube .corp .front {
+  background-color: #e3e0e0;
+  transform: translateZ(0px);
+}
+.container .screen .cube:hover {
+  transform: scale(1.4);
+}
+.container .screen .cube::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 140%;
+  filter: blur(10px);
+  transform: rotateX(80deg);
+  animation: rotate2d infinite linear 10s alternate-reverse;
+  background: linear-gradient(90deg, rgb(193, 193, 200) 42%, rgb(215, 219, 233) 100%);
+}
+@keyframes rotate2d {
+  100% {
+    transform: rotateX(80deg) rotateZ(-360deg);
+  }
+}
+@keyframes rotate3d {
+  100% {
+    transform: rotateY(360deg) rotateX(360deg);
+  }
+}
+.container .screen .coffee .cup {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  box-shadow: 0 0.2em 1em rgba(99, 97, 97, 0.568627451);
+  background: linear-gradient(90deg, rgb(193, 193, 200) 42%, rgb(215, 219, 233) 100%);
+  border-bottom-left-radius: 45%;
+  border-bottom-right-radius: 45%;
+}
+.container .screen .coffee .cup .vapour {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  height: 20%;
+  transform: translateY(-50%);
+}
+.container .screen .coffee .cup .vapour span {
+  width: 0.7em;
+  border-radius: 50%;
+  background-color: rgb(193, 193, 200);
+  height: 3em;
+  filter: blur(10px);
+  animation: vapour infinite linear 3s;
+  animation-delay: calc(var(--i) * -0.5s);
+}
+.container .screen .coffee .cup .hand {
+  width: 100%;
+  height: 60%;
+  border: 1em solid rgb(189, 190, 193);
+  position: absolute;
+  left: 30%;
+  top: 40%;
+  transform: translateY(-50%);
+  z-index: -1;
+  border-bottom-right-radius: 50%;
+  border-top-right-radius: 10%;
+}
+.container .screen .coffee .cup .top {
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  background: linear-gradient(90deg, rgb(193, 193, 200) 42%, rgb(215, 219, 233) 100%);
+  top: 0;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  overflow: hidden;
+}
+.container .screen .coffee .cup .top .milk {
+  position: absolute;
+  background-color: #462e01;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  top: 50%;
+}
+@keyframes cook {
+  100% {
+    background-color: beige;
+  }
+}
+.container .screen .coffee .cup .top::before {
+  position: absolute;
+  content: "";
+  width: 95%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgb(193, 193, 200) 42%, rgb(215, 219, 233) 100%);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+.container .screen .coffee .cup::before {
+  content: "";
+  position: absolute;
+  width: 80%;
+  transform: translateX(-50%);
+  left: 50%;
+  height: 15%;
+  bottom: -10px;
+  z-index: -1;
+  filter: blur(4px);
+  background: linear-gradient(90deg, rgb(193, 193, 200) 42%, rgb(215, 219, 233) 100%);
+  border-radius: 50%;
+}
+@keyframes vapour {
+  100% {
+    transform: translateY(-150px) scale(4);
+    opacity: 0;
+  }
+}
+.container .dock {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  position: absolute;
+  bottom: 1em;
+  left: 50%;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 0.2em 4em;
+  border-radius: 10px;
+  transform: translateX(-50%);
+}
+.container .dock .widget {
+  position: relative;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.container .dock .widget .tooltip {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  width: 120px;
+  text-align: center;
+  transform: translateX(-50%);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.container .dock .widget:hover .tooltip {
+  opacity: 1;
+}
+.container .dock .widget:hover {
+  transform: scale(1.2) translateY(-20px);
+  border-radius: 50%;
+}
+.container .dock .widget::before {
+  position: absolute;
+  content: "";
+  background-color: #fff;
+  width: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  aspect-ratio: 1;
+  bottom: 0;
+  border-radius: 50%;
+}
+
+/*# sourceMappingURL=index.css.map */
