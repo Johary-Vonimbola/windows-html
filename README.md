@@ -29,6 +29,8 @@ Parce que coder, c’est bien, mais coder dans une ambiance agréable, c’est e
 
 Prêt à cliquer, glisser, et t’amuser ? Clone le repo, ouvre-le dans ton navigateur, et savoure !
 
-*Créé avec passion par J*
+*J-JJ-JJJ-JJJJ-JJJJJ*
+
+Johary
 
 N'hesite pas cloner le repo pour le tester en ouvrant juste le index.html dans src
