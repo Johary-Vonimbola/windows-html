@@ -1,4 +1,4 @@
-# Windows-HTML : l’UI la plus douce du web
+# Windows-HTML
 
 Bienvenue dans **Windows-HTML**, le laboratoire numérique où l’interface utilisateur devient un terrain de jeu moelleux et interactif !
 
